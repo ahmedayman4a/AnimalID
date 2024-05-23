@@ -199,6 +199,7 @@ parent(dolphin, ancient_whale).
 parent(eagle, prehistoric_eagle).
 parent(shark, megalodon).
 parent(crocodile, prehistoric_crocodile).
+
 % For testing
 parent(dog1,dog2).
 parent(dog2,dog3).
@@ -311,7 +312,7 @@ ask_another :-
     ).
 
 main :-
-    % Animal=dog4,  % For testing
+
     ask_diet(Diet),
     ask_habitat(Habitat),
     ask_sound(Sound),
@@ -319,9 +320,6 @@ main :-
     ask_size(Size),
 
     ( identify_animal(Animal,Habitat,Sound,Skin,Size,Diet) -> % If animal is identified
-        % An extra feature to guess by using Ancestor 
-        % ask_ancestor(Ancestor),
-        % format('Your animal is a descendant of ~w.', [Ancestor]), nl.
         format('Your animal\'s diet is ~w.', [Diet]), nl,
         format('Your animal lives in the ~w.', [Habitat]), nl,
         format('Your animal makes a ~w.', [Sound]), nl,
@@ -337,7 +335,14 @@ main :-
     ),
     ask_another.
 
-
+% A new main function for testing the ascendants and descendants recursively.
+% main :-
+%     Animal=dog4,  % For testing
+%     % Animal=dog1,  % For testing
+%     format('Your animal is a ~w.', [Animal]), nl,
+%     ask_ancestor_exist(Animal),
+%     ask_descendant_exist(Animal),
+%     ask_another.
 
 % Run the main predicate
 :- main.
