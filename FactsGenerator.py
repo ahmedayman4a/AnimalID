@@ -59,22 +59,21 @@ def generate_prolog_facts(csv_file_path, prolog_file_path):
             if animal.lower() == 'another' or animal == '':
                 animal = row['In case another what is the name of the animal?']
                 if animal == '':
-                    animal = 'Another'
-
+                    continue
             animal = format_name(animal)
 
             habitat = row['What is the habitat of the animal?']
             if habitat.lower() == 'another' or habitat == '':
                 habitat = row['In case another what is the habitant of the animal?']
                 if habitat == '':
-                    habitat = 'Another'
+                    continue
             habitat = format_habitat(habitat)
 
             sound = row['What sound does the animal make?']
             if sound.lower() == 'another' or sound == '':
                 sound = row['In case another what is the sound of the animal?']
                 if sound == '':
-                    sound = 'Another'
+                    continue
 
             sound = format_sound(sound)
 
@@ -82,7 +81,7 @@ def generate_prolog_facts(csv_file_path, prolog_file_path):
             if skin_coating.lower() == 'another' or skin_coating == '':
                 skin_coating = row['In case another what is the skin of the animal?']
                 if skin_coating == '':
-                    skin_coating = 'Another'
+                    continue
 
             skin_coating = format_skin_coating(skin_coating)
 
@@ -144,7 +143,7 @@ def generate_prolog_facts(csv_file_path, prolog_file_path):
                 prologfile.write(new_content)
 
 # Example usage
-csv_file_path = 'data.csv'
+csv_file_path = 'data2.csv'
 prolog_file_path = 'animal_facts.pl'
 generate_prolog_facts(csv_file_path, prolog_file_path)
 
