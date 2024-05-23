@@ -192,13 +192,29 @@ sound(monkey, chatter).
 
 % Ancestor relationships
 parent(elephant, mammoth).
+parent(mammoth, woolly_mammoth).
+parent(woolly_mammoth, prehistoric_mammoth).
+
 parent(tiger, saber_tooth_tiger).
+parent(saber_tooth_tiger, prehistoric_tiger).
+
 parent(wolf, dire_wolf).
+parent(dire_wolf, prehistoric_wolf).
+
 parent(bear, short_faced_bear).
+parent(short_faced_bear, prehistoric_bear).
+
 parent(dolphin, ancient_whale).
+parent(ancient_whale, prehistoric_whale).
+
 parent(eagle, prehistoric_eagle).
+parent(prehistoric_eagle, ancient_eagle).
+
 parent(shark, megalodon).
+parent(megalodon, ancient_shark).
+
 parent(crocodile, prehistoric_crocodile).
+parent(prehistoric_crocodile, ancient_crocodile).
 
 % For testing
 parent(dog1,dog2).

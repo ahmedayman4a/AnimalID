@@ -56,23 +56,34 @@ def generate_prolog_facts(csv_file_path, prolog_file_path):
 
         for row in reader:
             animal = row['What is your favorite animal?']
-            if animal.lower() == 'another':
+            if animal.lower() == 'another' or animal == '':
                 animal = row['In case another what is the name of the animal?']
+                if animal == '':
+                    animal = 'Another'
+
             animal = format_name(animal)
 
             habitat = row['What is the habitat of the animal?']
-            if habitat.lower() == 'another':
+            if habitat.lower() == 'another' or habitat == '':
                 habitat = row['In case another what is the habitant of the animal?']
+                if habitat == '':
+                    habitat = 'Another'
             habitat = format_habitat(habitat)
 
             sound = row['What sound does the animal make?']
-            if sound.lower() == 'another':
+            if sound.lower() == 'another' or sound == '':
                 sound = row['In case another what is the sound of the animal?']
+                if sound == '':
+                    sound = 'Another'
+
             sound = format_sound(sound)
 
             skin_coating = row['What type of skin coating does the animal have?']
-            if skin_coating.lower() == 'another':
+            if skin_coating.lower() == 'another' or skin_coating == '':
                 skin_coating = row['In case another what is the skin of the animal?']
+                if skin_coating == '':
+                    skin_coating = 'Another'
+
             skin_coating = format_skin_coating(skin_coating)
 
             size = format_size(row['What size is the animal?'])
@@ -88,14 +99,18 @@ def generate_prolog_facts(csv_file_path, prolog_file_path):
 
             descendant_animal = row['Is your favorite animal a descendant of another animal?']
             if descendant_animal.lower() != 'no' and descendant_animal != '':
-                if descendant_animal.lower() == 'another':
+                if descendant_animal.lower() == 'another' or descendant_animal != '':
                     descendant_animal = format_name(row['In case another what is the name of the descendant of the animal?'])
+                    if descendant_animal == '':
+                        descendant_animal = 'Another'
                 new_facts.append(f"parent({descendant_animal}, {animal}).")
 
             ancestor_animal = row['Is your favorite animal an ancestor of another animal?']
             if ancestor_animal.lower() != 'no' and ancestor_animal != '':
-                if ancestor_animal.lower() == 'another':
+                if ancestor_animal.lower() == 'another' or ancestor_animal != '':
                     ancestor_animal = format_name(row['In case another what is the name of the ancestor of the animal?'])
+                    if ancestor_animal == '':
+                        ancestor_animal = 'Another'
                 new_facts.append(f"parent({animal}, {ancestor_animal}).")
             
             new_facts.append("")  # Add a newline between each group of facts
