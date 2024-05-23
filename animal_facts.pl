@@ -63,7 +63,7 @@ skin_coating(deer, fur).
 skin_coating(monkey, fur).
 
 % Size facts
-size(elephant, large).
+size(elephant, enormous).
 size(eagle, medium).
 size(tiger, large).
 size(whale, enormous).
