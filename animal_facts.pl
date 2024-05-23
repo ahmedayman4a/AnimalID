@@ -1,4 +1,4 @@
-% Animal facts
+% Animal facts database for the Animal Identification Expert System "Original AnimalID".
 animal(elephant).
 animal(eagle).
 animal(tiger).
