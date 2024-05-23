@@ -21,6 +21,10 @@ Once an animal is identified, the application can provide information about its 
 
 In addition to ancestors, the application can also provide information about the descendants of the identified animal, offering a complete lineage view.
 
+### 4. Google Form Integration
+
+We have a script that extracts data from a Google Form questionnaire and adds it to the dataset in Prolog. This allows for easy updates and expansion of the animal facts and characteristics database based on user inputs from the form.
+
 ## Implementation Details
 
 ### Data Representation
@@ -142,6 +146,10 @@ collect_descendants(Animal, Descendants) :-
     Descendants = [Child | ParentDescendants].
 ```
 
+### Google Form Data Integration
+
+To streamline the addition of new data, a script is provided that extracts questionnaire responses from a Google Form and adds them to the Prolog dataset. This process is done manually by extracting the data and then running the script to update the facts.
+
 ### User Interaction
 
 The main interaction loop is managed by the `main/0` predicate, which guides the user through a series of questions to gather characteristics and identify the animal. Additional queries for ancestors and descendants are also included.
@@ -197,4 +205,4 @@ ask_descendant_exist(Animal) :-
 
 ## Conclusion
 
-This Prolog application provides a comprehensive system for identifying animals based on user input and exploring their evolutionary lineage. The use of logical rules and recursive queries showcases Prolog's strength in handling such tasks efficiently. The interactive nature of the application ensures an engaging user experience, while the additional features of ancestor and descendant queries add significant educational value.
+This Prolog application provides a comprehensive system for identifying animals based on user input and exploring their evolutionary lineage. The use of logical rules and recursive queries showcases Prolog's strength in handling such tasks efficiently. The integration with Google Forms for data collection ensures that the application can be easily updated with new information. The interactive nature of the application ensures an engaging user experience, while the additional features of ancestor and descendant queries add significant educational value.
